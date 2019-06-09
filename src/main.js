@@ -7,6 +7,7 @@ import App from './App'
 import Home from './components/HelloFromVux'
 import vueHome from './components/HelloWorld.vue'
 import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(VueRouter)
 Vue.use(ElementUI)

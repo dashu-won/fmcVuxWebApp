@@ -37,7 +37,7 @@ export default {
             subtype: "text"
           },
           {
-            type: "radio",
+            type: "select",
             label: "性别",
             value: "",
             button: false,
