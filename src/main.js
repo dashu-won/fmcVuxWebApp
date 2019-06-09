@@ -5,12 +5,15 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import Home from './components/HelloFromVux'
+import vueHome from './components/HelloWorld.vue'
+import ElementUI from 'element-ui'
 
 Vue.use(VueRouter)
+Vue.use(ElementUI)
 
 const routes = [{
   path: '/',
-  component: Home
+  component: vueHome
 }]
 
 const router = new VueRouter({
