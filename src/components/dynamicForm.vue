@@ -40,6 +40,10 @@ export default {
   },
   watch: {},
   methods: {
+    handleInput(val, key) {
+      // 这里element-ui没有上报event，直接就是value了
+      this.$emit("input", { ...this.value, [key]: val });
+    },
     setDefaultValue() {
       const formData = { ...this.value }; // 设置默认值
       this.formConfig.formItemList.forEach(({ key, value }) => {
