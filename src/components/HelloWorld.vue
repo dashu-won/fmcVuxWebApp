@@ -1,11 +1,11 @@
 <template>
   <div class="hello">
-    <dynamic-form :formConfig.sync="someConfig" v-model="someData"/>
+    <dynamic-form :formConfig.sync="screenConfig" v-model="formData"/>
     <el-button type="primary" :round="true">提交列表按钮</el-button>
   </div>
 </template>
 
-<script>
+<script>  
 import dynamicForm from "./dynamicForm";
 export default {
   name: "HelloWorld",
@@ -15,13 +15,8 @@ export default {
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
-      someData: {
-        name: "ddd",
-        gender: "1",
-        address: "安徽",
-        descript:""
-      },
-      someConfig: {
+      formData: {},
+      screenConfig: {
         inline: true,
         labelPosition: "right",
         labelWidth: "",
@@ -33,7 +28,7 @@ export default {
             label: "姓名",
             disable: false,
             readonly: false,
-            value: "",
+            value: "王大树",
             placeholder: "请输入姓名",
             rules: [],
             key: "name",
@@ -63,7 +58,7 @@ export default {
           {
             type: "radio",
             label: "籍贯",
-            value: "",
+            value: "北京",
             button: false,
             border: true,
             rules: [],
@@ -86,11 +81,18 @@ export default {
             label: "描述",
             disable: false,
             readonly: false,
-            value: "",
+            value: "请开始你的表演",
             placeholder: "请开始你的表演",
             rules: [],
             key: "descript",
             subtype: "textarea"
+          },
+          {
+            type: "upload",
+            label: "上传图片",
+            action:"http:www.fmc.com",
+            listType:"picture-card",
+            rules: [],
           }
         ]
       }

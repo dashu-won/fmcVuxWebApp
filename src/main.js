@@ -8,13 +8,19 @@ import Home from './components/HelloFromVux'
 import vueHome from './components/HelloWorld.vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
-
+import { XInput, Group, PopupPicker, Selector, XTextarea, Radio } from 'vux'
+Vue.component('x-radio', Radio)
+Vue.component('x-textarea', XTextarea)
+Vue.component('x-input', XInput)
+Vue.component('group', Group)
+Vue.component('popup-picker', PopupPicker)
+Vue.component('selector', Selector)
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 
 const routes = [{
   path: '/',
-  component: vueHome
+  component: Home
 }]
 
 const router = new VueRouter({

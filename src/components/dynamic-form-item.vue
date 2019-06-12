@@ -50,6 +50,17 @@
         :disabled="o.disabled"
       ></el-radio>
     </el-radio-group>
+    <el-upload
+      v-else-if="item.type==='upload'"
+      v-bind="$attrs"
+      v-on="$listeners"
+      v-bind:action="item.action"
+      :list-type="item.listType"
+      :on-preview="handlePictureCardPreview"
+      :on-remove="handleRemove"
+    >
+      <i class="el-icon-plus"></i>
+    </el-upload>
     <span v-else>未知控件类型</span>
   </el-form-item>
 </template>
@@ -62,6 +73,10 @@ export default {
       required: true
     }
   },
-  mounted() {}
+  mounted() {},
+  methods: {
+    handlePictureCardPreview() {},
+    handleRemove() {}
+  }
 };
 </script>
